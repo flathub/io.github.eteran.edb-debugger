@@ -47,8 +47,8 @@ modules:
       - --disable-full-tgetent
     sources:
       - type: archive
-        url: https://invisible-island.net/datafiles/release/xterm.tar.gz
-        sha256: 75117c3cc5174a09c425ef106e69404d72f5ef05e03a5da00aaf15792d6f9c0f
+        url: https://invisible-island.net/archives/xterm/xterm-396.tgz
+        sha256: 43f94b6d0eecb4219a99f46352e746f2ab5558e40d922d411acff96cc778a6a5
 
   - name: graphviz
     buildsystem: autotools
