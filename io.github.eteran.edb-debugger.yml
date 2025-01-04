@@ -28,16 +28,18 @@ modules:
   - name: libXmu-xterm
     buildsystem: autotools
     sources:
-      - type: archive
-        url: https://xorg.freedesktop.org/releases/individual/lib/libXmu-1.1.4.tar.gz
-        sha256: 3091d711cdc1d8ea0f545a13b90d1464c3c3ab64778fd121f0d789b277a80289
+      - type: git
+        url: https://gitlab.freedesktop.org/xorg/lib/libxmu.git
+        tag: "libXmu-1.2.1"
+        commit: 792f80402ee06ce69bca3a8f2a84295999c3a170
 
   - name: libXaw-xterm
     buildsystem: autotools
     sources:
-      - type: archive
-        url: https://xorg.freedesktop.org/releases/individual/lib/libXaw-1.0.16.tar.gz
-        sha256: 012f90adf8739f2f023d63a5fee1528949cf2aba92ef7ac1abcfc2ae9cf28798
+      - type: git
+        url: https://gitlab.freedesktop.org/xorg/lib/libxaw.git
+        tag: "libXaw-1.0.16"
+        commit: f14ba54e9c7e415a05e33dd0b3b5f96e5de05c8b
 
   - name: xterm
     buildsystem: autotools
