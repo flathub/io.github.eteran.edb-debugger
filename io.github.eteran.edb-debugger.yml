@@ -59,6 +59,8 @@ modules:
 
   - name: edb
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     post-install:
       - install -Dm644 edb.appdata.xml /app/share/appdata/edb.appdata.xml
       - install -Dm644 src/res/images/edb.svg /app/share/icons/hicolor/scalable/apps/edb.svg
