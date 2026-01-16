@@ -1,6 +1,6 @@
 app-id: io.github.eteran.edb-debugger
 runtime: org.kde.Platform
-runtime-version: '5.15-24.08'
+runtime-version: '5.15-25.08'
 sdk: org.kde.Sdk
 command: edb
 rename-icon: edb
@@ -24,8 +24,8 @@ modules:
         url: https://github.com/aquynh/capstone.git
         tag: "5.0.3"
         commit: 5cca00533dadfe53181f1de3525f859769f69b65
-
-  - name: libXmu-xterm
+        
+  - name: libXmu #xterm
     buildsystem: autotools
     sources:
       - type: git
@@ -33,7 +33,7 @@ modules:
         tag: "libXmu-1.2.1"
         commit: 792f80402ee06ce69bca3a8f2a84295999c3a170
 
-  - name: libXaw-xterm
+  - name: libXaw #xterm
     buildsystem: autotools
     sources:
       - type: git
@@ -47,8 +47,8 @@ modules:
       - --disable-full-tgetent
     sources:
       - type: archive
-        url: https://invisible-island.net/archives/xterm/xterm-396.tgz
-        sha256: 43f94b6d0eecb4219a99f46352e746f2ab5558e40d922d411acff96cc778a6a5
+        url: https://invisible-island.net/archives/xterm/xterm-403.tgz
+        sha256: 1331b0df5919cb243ffe326dc6ff10a291e683a262f70cdf964a664be733ad83
 
   - name: graphviz
     buildsystem: autotools
@@ -59,6 +59,8 @@ modules:
 
   - name: edb
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     post-install:
       - install -Dm644 edb.appdata.xml /app/share/appdata/edb.appdata.xml
       - install -Dm644 src/res/images/edb.svg /app/share/icons/hicolor/scalable/apps/edb.svg
