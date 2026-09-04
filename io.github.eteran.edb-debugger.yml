@@ -22,8 +22,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/aquynh/capstone.git
-        tag: "5.0.3"
-        commit: 5cca00533dadfe53181f1de3525f859769f69b65
+        tag: "5.0.9"
+        commit: 022575848782a4801fd150fdbc927effcbca0864
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+)$
         
   - name: libXmu #xterm
     buildsystem: autotools
@@ -67,8 +70,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/eteran/edb-debugger.git
-        commit: 169e621bf88e1046030930bb302720eac3704ad7
         tag: 1.5.0
+        commit: 169e621bf88e1046030930bb302720eac3704ad7
+        x-checker-data:
+          type: git
+          is-main-source: true
+          tag-pattern: ^([\d.]+)$
       - type: patch
         path: edb.appdata.xml.patch
                             # xterm path
