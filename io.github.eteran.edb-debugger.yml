@@ -70,8 +70,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/eteran/edb-debugger.git
-        tag: 1.5.0
-        commit: 169e621bf88e1046030930bb302720eac3704ad7
+        tag: 1.6.0
+        commit: 0210ca6f711bd26139cd7a703d2718d90f5752d9
         x-checker-data:
           type: git
           is-main-source: true
