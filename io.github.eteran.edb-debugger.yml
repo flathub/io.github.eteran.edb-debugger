@@ -1,6 +1,6 @@
 app-id: io.github.eteran.edb-debugger
 runtime: org.kde.Platform
-runtime-version: '5.15-25.08'
+runtime-version: '6.11'
 sdk: org.kde.Sdk
 command: edb
 rename-icon: edb
@@ -62,27 +62,18 @@ modules:
 
   - name: edb
     buildsystem: cmake-ninja
-    config-opts:
-      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     post-install:
-      - install -Dm644 edb.appdata.xml /app/share/appdata/edb.appdata.xml
+      - install -Dm644 nedb.appdata.xml /app/share/appdata/edb.appdata.xml
       - install -Dm644 src/res/images/edb.svg /app/share/icons/hicolor/scalable/apps/edb.svg
     sources:
       - type: git
         url: https://github.com/eteran/edb-debugger.git
-        tag: 1.5.0
-        commit: 169e621bf88e1046030930bb302720eac3704ad7
+        tag: 1.6.0
+        commit: 0210ca6f711bd26139cd7a703d2718d90f5752d9
         x-checker-data:
           type: git
           is-main-source: true
           tag-pattern: ^([\d.]+)$
-      - type: patch
-        path: edb.appdata.xml.patch
-                            # xterm path
-      - type: patch 
-        path: Configuration.cpp.patch
-      - type: patch
-        path: edb_zh_CN.ts.patch
-      - type: patch
-        path: DialogOptions.ui.patch
+      - type: file
+        path: nedb.appdata.xml
 
