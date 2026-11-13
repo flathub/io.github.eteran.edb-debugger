@@ -76,13 +76,4 @@ modules:
           type: git
           is-main-source: true
           tag-pattern: ^([\d.]+)$
-      - type: patch
-        path: edb.appdata.xml.patch
-                            # xterm path
-      - type: patch 
-        path: Configuration.cpp.patch
-      - type: patch
-        path: edb_zh_CN.ts.patch
-      - type: patch
-        path: DialogOptions.ui.patch
 
