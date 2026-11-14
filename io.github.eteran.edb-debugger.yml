@@ -9,7 +9,8 @@ rename-appdata-file: edb.appdata.xml
 finish-args:
   - --allow=devel
   - --share=ipc
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --filesystem=xdg-documents
   - --device=dri
 
@@ -27,31 +28,6 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
-        
-  - name: libXmu #xterm
-    buildsystem: autotools
-    sources:
-      - type: git
-        url: https://gitlab.freedesktop.org/xorg/lib/libxmu.git
-        tag: "libXmu-1.2.1"
-        commit: 792f80402ee06ce69bca3a8f2a84295999c3a170
-
-  - name: libXaw #xterm
-    buildsystem: autotools
-    sources:
-      - type: git
-        url: https://gitlab.freedesktop.org/xorg/lib/libxaw.git
-        tag: "libXaw-1.0.16"
-        commit: f14ba54e9c7e415a05e33dd0b3b5f96e5de05c8b
-
-  - name: xterm
-    buildsystem: autotools
-    config-opts:
-      - --disable-full-tgetent
-    sources:
-      - type: archive
-        url: https://invisible-island.net/archives/xterm/xterm-403.tgz
-        sha256: 1331b0df5919cb243ffe326dc6ff10a291e683a262f70cdf964a664be733ad83
 
   - name: graphviz
     buildsystem: autotools
