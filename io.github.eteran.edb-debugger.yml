@@ -36,17 +36,12 @@ modules:
         url: https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/10.0.1/graphviz-10.0.1.tar.gz
         sha256: 72e1a575e9c382c4fd2267837962bc4582b3d9ad746e338cd8024bdeca124f32
 
-  - name: vte
+  - name: foot
     buildsystem: meson
-    config-opts:
-      - -Ddocs=false
-      - -Dvapi=false
-      - -Dgir=false
     sources:
       - type: git
-        url: https://gitlab.gnome.org/GNOME/vte.git
-        tag: 0.72.4
-        commit: 45d815431c08ff5a3cf076cde5edd43054773c4a
+        url: https://codeberg.org/dnkl/foot.git
+        tag: 1.28
 
   - name: edb
     buildsystem: cmake-ninja
