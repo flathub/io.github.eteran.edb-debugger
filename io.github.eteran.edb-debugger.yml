@@ -84,20 +84,17 @@ modules:
     config-opts:
       - -Ddocs=disabled
       - -Dterminfo=disabled
-    post-install:
-      - install -Dm755 foot-edb /app/bin/foot-edb
     sources:
       - type: git
         url: https://codeberg.org/dnkl/foot.git
         tag: 1.28.0
-      - type: file
-        path: foot-edb
 
   - name: edb
     buildsystem: cmake-ninja
     post-install:
       - install -Dm644 nedb.appdata.xml /app/share/appdata/edb.appdata.xml
       - install -Dm644 src/res/images/edb.svg /app/share/icons/hicolor/scalable/apps/edb.svg
+      - install -Dm755 foot-edb /app/bin/foot-edb
     sources:
       - type: git
         url: https://github.com/eteran/edb-debugger.git
@@ -107,6 +104,8 @@ modules:
           type: git
           is-main-source: true
           tag-pattern: ^([\d.]+)$
+      - type: file
+        path: foot-edb
       - type: file
         path: nedb.appdata.xml
       - type: patch
