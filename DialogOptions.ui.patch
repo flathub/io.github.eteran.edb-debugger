@@ -1,0 +1,11 @@
+--- a/src/DialogOptions.ui	2026-11-16 10:11:27.722508553 -0500
++++ b/src/DialogOptions.ui	2026-11-16 10:14:05.823459131 -0500
+@@ -572,7 +572,7 @@
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="txtTTY">
+             <property name="text">
+-             <string>xterm</string>
++             <string>foot-edb</string>
+             </property>
+            </widget>
+           </item>
