@@ -55,10 +55,14 @@ modules:
     config-opts:
       - -Ddocs=disabled
       - -Dterminfo=disabled
+    post-install:
+      - install -Dm755 foot-edb /app/bin/foot-edb
     sources:
       - type: git
         url: https://codeberg.org/dnkl/foot.git
         tag: 1.28.0
+      - type: file
+        path: foot-edb
 
   - name: edb
     buildsystem: cmake-ninja
