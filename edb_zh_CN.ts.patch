@@ -1,0 +1,11 @@
+--- a/src/res/translations/edb_zh_CN.ts	2026-11-16 10:17:01.584521500 -0500
++++ b/src/res/translations/edb_zh_CN.ts	2026-11-16 10:18:39.137113066 -0500
+@@ -3150,7 +3150,7 @@
+     </message>
+     <message>
+         <location filename="../../DialogOptions.ui" line="575"/>
+-        <source>xterm</source>
++        <source>foot-edb</source>
+         <translation></translation>
+     </message>
+     <message>
