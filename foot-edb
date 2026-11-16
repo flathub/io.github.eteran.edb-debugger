@@ -1,0 +1,4 @@
+#!/bin/sh
+while [ $# -gt 0 ] && [ "$1" != "-e" ]; do shift; done
+shift
+exec foot --title "edb output" --hold -e "$@"
