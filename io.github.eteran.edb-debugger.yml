@@ -115,4 +115,6 @@ modules:
           type: git
           is-main-source: true
           tag-pattern: ^([\d.]+)$
-
+      - type: patch
+        paths: 
+          - assemblers.xml.patch
