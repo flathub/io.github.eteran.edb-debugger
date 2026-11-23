@@ -104,7 +104,7 @@ modules:
   - name: edb
     buildsystem: cmake-ninja
     post-install:
-      - install -Dm644 nedb.appdata.xml /app/share/appdata/edb.appdata.xml
+      - install -Dm644 edb.appdata.xml /app/share/appdata/edb.appdata.xml
       - install -Dm644 src/res/images/edb.svg /app/share/icons/hicolor/scalable/apps/edb.svg
       - install -Dm755 foot-edb /app/bin/foot-edb
     sources:
@@ -118,8 +118,6 @@ modules:
           tag-pattern: ^([\d.]+)$
       - type: file
         path: foot-edb
-      - type: file
-        path: nedb.appdata.xml
       - type: patch
         paths: 
           - Configuration.cpp.patch
