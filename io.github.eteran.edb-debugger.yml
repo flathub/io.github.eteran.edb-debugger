@@ -32,6 +32,18 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
+          
+  - name: yasm
+    buildsystem: autotools
+    build-options:
+      env:
+        ac_cv_header_stdc: "yes"
+        CFLAGS: "-std=gnu17"
+    sources:
+      - type: git
+        url: https://github.com/yasm/yasm.git
+        tag: v1.3.0
+        commit: ba463d3c26c0ece2e797b8d6381b161633b5971a
 
   - name: graphviz
     buildsystem: autotools
@@ -98,7 +110,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/eteran/edb-debugger.git
-        tag: 1.6.0
+        tag: 1.6.2
         commit: 0210ca6f711bd26139cd7a703d2718d90f5752d9
         x-checker-data:
           type: git
