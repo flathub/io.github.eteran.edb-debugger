@@ -32,6 +32,18 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
+          
+  - name: yasm
+    buildsystem: autotools
+    build-options:
+      env:
+        ac_cv_header_stdc: "yes"
+        CFLAGS: "-std=gnu17"
+    sources:
+      - type: git
+        url: https://github.com/yasm/yasm.git
+        tag: v1.3.0
+        commit: ba463d3c26c0ece2e797b8d6381b161633b5971a
 
   - name: graphviz
     buildsystem: autotools
@@ -92,25 +104,17 @@ modules:
   - name: edb
     buildsystem: cmake-ninja
     post-install:
-      - install -Dm644 nedb.appdata.xml /app/share/appdata/edb.appdata.xml
+      - install -Dm644 edb.appdata.xml /app/share/appdata/edb.appdata.xml
       - install -Dm644 src/res/images/edb.svg /app/share/icons/hicolor/scalable/apps/edb.svg
-      - install -Dm755 foot-edb /app/bin/foot-edb
     sources:
       - type: git
         url: https://github.com/eteran/edb-debugger.git
-        tag: 1.6.0
-        commit: 0210ca6f711bd26139cd7a703d2718d90f5752d9
+        tag: 1.6.2
+        commit: 4b8be8652ad14814b9f3bef8badb6623ea604df6
         x-checker-data:
           type: git
           is-main-source: true
           tag-pattern: ^([\d.]+)$
-      - type: file
-        path: foot-edb
-      - type: file
-        path: nedb.appdata.xml
       - type: patch
         paths: 
-          - Configuration.cpp.patch
-          - edb_zh_CN.ts.patch
-          - DialogOptions.ui.patch
-
+          - assemblers.xml.patch

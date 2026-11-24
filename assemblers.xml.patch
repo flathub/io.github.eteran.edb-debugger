@@ -1,0 +1,11 @@
+--- a/plugins/Assembler/xml/assemblers.xml	2026-11-23 17:37:58.334638254 -0500
++++ b/plugins/Assembler/xml/assemblers.xml	2026-11-23 17:51:03.940043635 -0500
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <assemblers>
+ 	<assembler name="yasm" arch="x86">
+-		<executable command_line="/usr/bin/yasm -f bin %IN% -o %OUT%" extension="asm" />
++		<executable command_line="yasm -f bin %IN% -o %OUT%" extension="asm" />
+ 		<template>
+ 		<![CDATA[
+ 		[BITS %BITS%]
